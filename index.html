@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabriela Sayuri | Portfólio UGC</title>
+<meta name="description" content="Portfólio de Gabriela Sayuri, criadora de conteúdo UGC de Florianópolis. Vídeos e fotos autênticos para marcas de beleza, moda, comida, casa, maternidade e pet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Tenor+Sans&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VARIÁVEIS :: paleta clean girl bege
+   --areia é o fundo geral, --off-white é o fundo dos blocos/cartões.
+   --marrom é o acento principal (números, ícones, linhas de destaque)
+   e --marrom-texto é uma versão mais escura dele, usada só em texto
+   pequeno para manter contraste de leitura confortável.
+   --nude é o acento secundário, mais claro, para detalhes suaves.
+   ============================================================ */
+:root{
+  --areia:#efe9e1;
+  --off-white:#fdfcfa;
+  --marrom:#8a7461;
+  --marrom-texto:#6b5442;
+  --nude:#c9b5a3;
+  --tinta:#2a221c;
+  --tinta-suave:#5c5148;
+  --linha:rgba(42,34,28,.18);
+  --linha-forte:rgba(42,34,28,.4);
+  --wrap:1200px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+}
+body{
+  margin:0;
+  background:var(--areia);
+  color:var(--tinta);
+  font-family:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:"Tenor Sans","Jost",serif;
+  font-weight:400;
+  line-height:1.18;
+  margin:0;
+  letter-spacing:.01em;
+  color:var(--tinta);
+}
+p{margin:0}
+ul{list-style:none;margin:0;padding:0}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font-family:inherit;color:inherit}
+img{max-width:100%;display:block}
+
+.env{width:min(var(--wrap),100% - 48px);margin-inline:auto}
+.secao{padding:120px 0}
+.secao--off{background:var(--off-white)}
+section[id]{scroll-margin-top:110px}
+
+.so-leitor{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;padding:0}
+.pular{
+  position:absolute;left:-9999px;top:0;z-index:300;
+  background:var(--tinta);color:var(--off-white);
+  padding:14px 22px;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;
+}
+.pular:focus{left:0}
+
+:focus-visible{outline:2px solid var(--marrom-texto);outline-offset:4px}
+
+/* ---- rótulo de seção numerada ---- */
+.cabecalho-secao{margin-bottom:64px;max-width:640px}
+.numero-secao{
+  display:flex;align-items:center;gap:14px;margin-bottom:18px;
+  font-family:"Jost",sans-serif;font-size:.78rem;font-weight:500;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--marrom-texto);
+}
+.numero-secao i{
+  font-style:normal;display:inline-flex;align-items:center;justify-content:center;
+  width:32px;height:32px;background:var(--tinta);color:var(--off-white);
+  font-size:.72rem;letter-spacing:0;flex:none;
+}
+.cabecalho-secao h2{font-size:clamp(2rem,4vw,2.8rem)}
+.cabecalho-secao p{margin-top:18px;color:var(--tinta-suave);font-size:1.02rem;max-width:52ch}
+
+/* ============================================================
+   MENU FIXO
+   ============================================================ */
+.topo{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  background:rgba(239,233,225,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--linha);
+}
+.topo__int{display:flex;align-items:center;justify-content:space-between;min-height:84px;gap:24px}
+.marca{
+  font-family:"Tenor Sans",serif;font-size:1.15rem;letter-spacing:.06em;
+}
+.nav-lista{display:flex;align-items:center;gap:8px}
+.nav-lista a{
+  display:block;padding:10px 16px;font-size:.78rem;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-suave);
+  transition:color .2s;
+}
+.nav-lista a:hover{color:var(--marrom-texto)}
+.nav-cta{border:1px solid var(--tinta) !important;margin-left:8px;transition:border-color .2s,color .2s}
+.nav-cta:hover{border-color:var(--marrom-texto) !important;color:var(--marrom-texto)}
+
+.menu-btn{
+  display:none;width:44px;height:44px;border:1px solid var(--tinta);background:transparent;
+  cursor:pointer;padding:0;align-items:center;justify-content:center;flex-direction:column;gap:6px;
+}
+.menu-btn span{display:block;width:20px;height:1px;background:var(--tinta);transition:.25s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.nav-mobile{
+  display:none;position:fixed;top:85px;left:0;right:0;bottom:0;z-index:99;
+  background:var(--areia);padding:40px 24px;overflow-y:auto;
+}
+.nav-mobile.ativo{display:block}
+.nav-mobile ul{display:flex;flex-direction:column;gap:4px}
+.nav-mobile a{
+  display:block;padding:20px 4px;font-size:1.4rem;font-family:"Tenor Sans",serif;
+  border-bottom:1px solid var(--linha);
+}
+
+@media (max-width:880px){
+  .nav-lista{display:none}
+  .menu-btn{display:inline-flex}
+}
+
+/* ============================================================
+   BOTÕES :: retangulares, sempre só de contorno (sem preenchimento)
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:17px 34px;border:1px solid var(--tinta);background:transparent;
+  font-size:.78rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--tinta);cursor:pointer;transition:border-color .25s,color .25s;
+}
+.btn:hover{border-color:var(--marrom-texto);color:var(--marrom-texto)}
+.btn--nude{border-color:var(--nude)}
+.botoes{display:flex;flex-wrap:wrap;gap:16px}
+
+/* ============================================================
+   BLOCOS DE MÍDIA (placeholder até trocar pela imagem/vídeo real)
+   Para trocar: substitua a div.midia por um <img src="sua-foto.jpg"
+   alt="descrição real"> mantendo a mesma classe para herdar o tamanho.
+   ============================================================ */
+.midia{
+  position:relative;width:100%;
+  background:linear-gradient(155deg,var(--nude) 0%,rgba(201,181,163,.4) 45%,var(--off-white) 100%);
+  border:1px solid var(--tinta);
+  display:flex;align-items:flex-end;justify-content:flex-start;
+  overflow:hidden;
+}
+.midia__legenda{
+  padding:14px 18px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-suave);background:rgba(253,252,250,.8);
+}
+.midia--4-5{aspect-ratio:4/5}
+.midia--9-16{aspect-ratio:9/16}
+.midia--1-1{aspect-ratio:1/1}
+.midia--16-9{aspect-ratio:16/9}
+
+/* ============================================================
+   ANIMAÇÃO DE ENTRADA
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.em-vista{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* ============================================================
+   1. CAPA / HERO
+   ============================================================ */
+.hero{padding:180px 0 90px;min-height:100svh;display:flex;align-items:center}
+.hero__grade{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;width:100%}
+.hero__tag{
+  display:inline-block;padding:10px 18px;border:1px solid var(--tinta);
+  font-size:.76rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--tinta);margin-bottom:26px;
+}
+.hero h1{font-size:clamp(3rem,7.4vw,5.6rem);letter-spacing:.01em}
+.hero__frase{margin-top:26px;font-size:1.15rem;color:var(--tinta-suave);max-width:46ch}
+.hero .botoes{margin-top:44px}
+.hero__foto .midia{aspect-ratio:4/5}
+
+.hero__numeros{
+  margin-top:90px;padding-top:44px;border-top:1px solid var(--linha);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+}
+.hero__numero b{
+  display:block;font-family:"Tenor Sans",serif;font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:400;
+  color:var(--marrom-texto);
+}
+.hero__numero span{display:block;margin-top:8px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave)}
+
+@media (max-width:960px){
+  .hero__grade{grid-template-columns:1fr;gap:48px}
+  .hero__foto{order:-1;max-width:340px}
+}
+@media (max-width:600px){
+  .hero{padding:150px 0 70px}
+  .hero__numeros{grid-template-columns:1fr;gap:24px;text-align:left}
+}
+
+/* faixa de marcas */
+.marcas-faixa{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);overflow:hidden;background:var(--off-white)}
+.marcas-trilho{display:flex;width:max-content;animation:rolar-marcas 34s linear infinite}
+.marcas-trilho:hover{animation-play-state:paused}
+.marcas-item{
+  padding:26px 46px;white-space:nowrap;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--tinta-suave);border-right:1px solid var(--linha);
+}
+@keyframes rolar-marcas{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){
+  .marcas-trilho{animation:none;flex-wrap:wrap;width:100%}
+}
+
+/* ============================================================
+   2. SOBRE MIM
+   ============================================================ */
+.sobre__grade{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center}
+.sobre__foto .midia{aspect-ratio:4/5}
+.sobre__texto p{font-size:1.08rem;color:var(--tinta-suave)}
+.sobre__texto p + p{margin-top:20px}
+.promessas{margin-top:40px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--linha)}
+.promessas li{
+  display:flex;align-items:baseline;gap:18px;padding:20px 0;border-bottom:1px solid var(--linha);
+}
+.promessas li i{
+  font-style:normal;font-family:"Tenor Sans",serif;font-size:.85rem;color:var(--marrom-texto);
+  border:1px solid var(--marrom);width:30px;height:30px;flex:none;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+.assinatura{margin-top:44px;font-family:"Tenor Sans",serif;font-style:italic;font-size:1.6rem;color:var(--marrom-texto)}
+
+@media (max-width:880px){
+  .sobre__grade{grid-template-columns:1fr;gap:40px}
+  .sobre__foto{max-width:320px}
+}
+
+/* ============================================================
+   3. CONTEÚDOS DE DESTAQUE
+   ============================================================ */
+.destaques-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.destaque-card{display:block;border:1px solid var(--tinta);background:var(--off-white)}
+.destaque-card:hover .midia{filter:brightness(.94)}
+.destaque-card .midia{aspect-ratio:9/16}
+.play-botao{
+  position:absolute;inset:0;margin:auto;width:60px;height:60px;
+  background:rgba(253,252,250,.92);border:1px solid var(--tinta);
+  display:flex;align-items:center;justify-content:center;
+}
+.play-botao::after{
+  content:"";width:0;height:0;margin-left:4px;
+  border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid var(--marrom-texto);
+}
+.destaque-corpo{padding:24px}
+.destaque-numero{font-family:"Tenor Sans",serif;font-size:1.7rem;color:var(--marrom-texto)}
+.destaque-rotulo{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-suave);margin-top:4px}
+.destaque-titulo{margin-top:18px;font-size:1.1rem}
+.destaque-contexto{margin-top:8px;font-size:.92rem;color:var(--tinta-suave)}
+
+@media (max-width:880px){
+  .destaques-grade{grid-template-columns:1fr;max-width:380px;margin-inline:auto}
+}
+
+/* ============================================================
+   4. TRABALHOS POR NICHO
+   ============================================================ */
+.filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:48px}
+.filtro-btn{
+  padding:11px 22px;border:1px solid var(--linha-forte);background:transparent;
+  font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-suave);
+  cursor:pointer;transition:border-color .2s,color .2s,box-shadow .2s;
+}
+.filtro-btn:hover{border-color:var(--marrom);color:var(--marrom-texto)}
+.filtro-btn[aria-pressed="true"]{
+  border-color:var(--tinta);color:var(--tinta);
+  box-shadow:inset 0 -2px 0 0 var(--marrom);
+}
+
+.trabalhos-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px}
+.trabalho-card{border:1px solid var(--tinta);background:var(--off-white);transition:opacity .3s,transform .3s}
+.trabalho-card .midia{aspect-ratio:4/5}
+.trabalho-corpo{padding:20px}
+.trabalho-nicho{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--marrom-texto)}
+.trabalho-titulo{margin-top:8px;font-size:1.02rem}
+.trabalho-card.escondido{display:none}
+
+/* ============================================================
+   5. COMO EU TE AJUDO
+   ============================================================ */
+.servicos-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linha-forte);border:1px solid var(--tinta)}
+.servico-card{background:var(--off-white);padding:44px 36px}
+.servico-numero{
+  display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+  background:var(--nude);border:1px solid var(--tinta);font-family:"Tenor Sans",serif;font-size:.95rem;color:var(--tinta);
+}
+.servico-titulo{margin-top:22px;font-size:1.2rem}
+.servico-desc{margin-top:14px;font-size:.94rem;color:var(--tinta-suave)}
+
+@media (max-width:880px){
+  .servicos-grade{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   6. NÚMEROS E DEPOIMENTOS
+   ============================================================ */
+.metricas-grade{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding-bottom:80px;border-bottom:1px solid var(--linha)}
+.metrica{border-top:3px solid var(--marrom);padding-top:20px}
+.metrica b{
+  display:block;font-family:"Tenor Sans",serif;font-weight:400;font-size:clamp(2.1rem,4vw,3.2rem);
+  color:var(--marrom-texto);
+}
+.metrica span{display:block;margin-top:10px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave)}
+
+.subtitulo-bloco{margin:80px 0 36px;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--marrom-texto)}
+
+.resultados-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding-bottom:80px;border-bottom:1px solid var(--linha)}
+.resultado-card{border:1px solid var(--tinta);border-top:4px solid var(--marrom);padding:34px;background:var(--off-white)}
+.resultado-marca{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--marrom-texto)}
+.resultado-objetivo{margin-top:16px;font-size:1rem}
+.resultado-texto{margin-top:12px;font-size:.92rem;color:var(--tinta-suave)}
+
+.depoimentos-grade{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.depoimento-card{border:1px solid var(--tinta);padding:34px;background:var(--off-white)}
+.depoimento-texto{font-size:1.02rem;font-style:italic;font-family:"Tenor Sans",serif;line-height:1.55}
+.depoimento-autor{margin-top:20px;font-size:.8rem;letter-spacing:.06em;color:var(--tinta-suave)}
+.depoimento-autor b{color:var(--tinta);font-weight:500}
+
+@media (max-width:880px){
+  .metricas-grade{grid-template-columns:repeat(2,1fr);row-gap:44px}
+  .resultados-grade{grid-template-columns:1fr}
+  .depoimentos-grade{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   7. BORA CRIAR JUNTOS
+   ============================================================ */
+.contato-grade{display:grid;grid-template-columns:1fr 1fr;gap:72px}
+.campo{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.campo label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-suave)}
+.campo input,.campo textarea{
+  border:none;border-bottom:1px solid var(--linha-forte);background:transparent;
+  padding:12px 2px;font-size:1rem;font-family:"Jost",sans-serif;color:var(--tinta);
+}
+.campo input:focus,.campo textarea:focus{outline:none;border-color:var(--marrom-texto)}
+.campo textarea{resize:vertical;min-height:110px}
+#formConfirmacao{
+  display:none;border:1px solid var(--marrom);padding:34px;background:var(--off-white);
+}
+#formConfirmacao.ativo{display:block}
+#formularioContato.escondido{display:none}
+
+.contato-lateral h3{font-size:1.3rem}
+.contato-lateral p{margin-top:16px;color:var(--tinta-suave);font-size:1rem}
+.contato-links{margin-top:36px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--linha)}
+.contato-links a{
+  display:flex;justify-content:space-between;align-items:center;padding:20px 0;
+  border-bottom:1px solid var(--linha);font-size:.92rem;letter-spacing:.04em;
+}
+.contato-links a span:last-child{color:var(--marrom-texto);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
+
+@media (max-width:880px){
+  .contato-grade{grid-template-columns:1fr;gap:48px}
+}
+
+/* ============================================================
+   8. RODAPÉ
+   ============================================================ */
+footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
+.rodape-int{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.rodape-marca{font-family:"Tenor Sans",serif;font-size:1.05rem;letter-spacing:.06em;color:var(--off-white)}
+.rodape-redes{display:flex;gap:26px}
+.rodape-redes a{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--nude)}
+.rodape-redes a:hover{color:var(--off-white)}
+.rodape-copy{width:100%;margin-top:24px;padding-top:24px;border-top:1px solid rgba(253,252,250,.2);font-size:.76rem;color:rgba(253,252,250,.72)}
+
+/* ============================================================
+   CARD DE CAPTURA (mídia kit)
+   ============================================================ */
+.captura-fundo{
+  position:fixed;inset:0;z-index:200;background:rgba(42,34,28,.55);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+  opacity:0;visibility:hidden;transition:opacity .3s ease;
+}
+.captura-fundo.ativo{opacity:1;visibility:visible}
+.captura-card{
+  position:relative;width:min(420px,100%);background:var(--off-white);
+  border:1px solid var(--tinta);border-top:4px solid var(--marrom);
+  padding:48px 40px;transform:translateY(16px);transition:transform .3s ease;
+}
+.captura-fundo.ativo .captura-card{transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){
+  .captura-fundo,.captura-card{transition:none}
+}
+.captura-fechar{
+  position:absolute;top:18px;right:18px;width:34px;height:34px;border:1px solid var(--linha-forte);
+  background:transparent;cursor:pointer;font-size:1rem;line-height:1;color:var(--tinta-suave);
+}
+.captura-fechar:hover{border-color:var(--marrom-texto);color:var(--marrom-texto)}
+.captura-tag{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--marrom-texto)}
+.captura-card h3{margin-top:16px;font-size:1.5rem}
+.captura-card p{margin-top:12px;font-size:.92rem;color:var(--tinta-suave)}
+.captura-card form{margin-top:28px}
+.captura-card .campo{margin-bottom:20px}
+.captura-card .btn{width:100%}
+
+@media (max-width:600px){
+  .env{width:min(var(--wrap),100% - 32px)}
+  .secao{padding:80px 0}
+  .destaque-corpo,.resultado-card,.depoimento-card,.captura-card{padding:26px}
+}
+</style>
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="env topo__int">
+    <a href="#inicio" class="marca">Gabriela Sayuri</a>
+    <nav class="nav-lista" aria-label="Navegação principal">
+      <ul style="display:flex;gap:4px">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#destaques">Destaques</a></li>
+        <li><a href="#trabalhos">Trabalhos</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#numeros">Números</a></li>
+        <li><a href="#contato" class="nav-cta">Contato</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navMobile" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Navegação principal para celular">
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#destaques">Destaques</a></li>
+      <li><a href="#trabalhos">Trabalhos</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#numeros">Números</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="conteudo">
+
+  <!-- ============================================================
+       1. CAPA
+       ============================================================ -->
+  <section id="inicio" class="hero">
+    <div class="env hero__grade">
+      <div>
+        <span class="hero__tag">Criadora de conteúdo UGC</span>
+        <h1>Gabriela<br>Sayuri</h1>
+        <p class="hero__frase">Maternidade que conecta e converte para o público que mais toma decisão de compra dentro do lar.</p>
+        <div class="botoes">
+          <a href="#contato" class="btn">Falar comigo</a>
+          <a href="#trabalhos" class="btn btn--nude">Ver os trabalhos</a>
+        </div>
+
+        <div class="hero__numeros">
+          <!-- Números rápidos da capa: troque os valores no array heroNumeros no script -->
+          <div class="hero__numero"><b data-contador data-alvo="0" data-sufixo="+">0+</b><span>Vídeos entregues</span></div>
+          <div class="hero__numero"><b data-contador data-alvo="100" data-sufixo="+">0+</b><span>Marcas atendidas</span></div>
+          <div class="hero__numero"><b data-contador data-alvo="2" data-sufixo="M+">0M+</b><span>Views somadas</span></div>
+        </div>
+      </div>
+
+      <div class="hero__foto">
+        <!-- Para trocar: substitua a div abaixo por <img src="sua-foto.jpg" alt="Gabriela Sayuri sorrindo para a câmera" class="midia midia--4-5"> -->
+        <div class="midia midia--4-5" role="img" aria-label="Foto da creator Gabriela Sayuri, formato vertical 4 por 5">
+          <span class="midia__legenda">Foto da creator, formato 4:5</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- faixa fina com as marcas, fecha a capa -->
+  <div class="marcas-faixa" aria-label="Marcas que já trabalharam com Gabriela Sayuri">
+    <div class="marcas-trilho" id="trilhoMarcas"></div>
+  </div>
+
+  <!-- ============================================================
+       2. SOBRE MIM
+       ============================================================ -->
+  <section id="sobre" class="secao">
+    <div class="env sobre__grade reveal">
+      <div class="sobre__foto">
+        <!-- Para trocar: substitua por <img src="sua-foto-2.jpg" alt="Gabriela Sayuri gravando conteúdo" class="midia midia--4-5"> -->
+        <div class="midia midia--4-5" role="img" aria-label="Foto de Gabriela Sayuri no dia a dia de gravação, formato vertical 4 por 5">
+          <span class="midia__legenda">Foto da creator, formato 4:5</span>
+        </div>
+      </div>
+      <div class="sobre__texto">
+        <span class="numero-secao"><i>01</i>Sobre</span>
+        <p>Oi, eu sou a Gabriela. Moro em Florianópolis e crio conteúdo autêntico para marcas de beleza, moda, comida, casa e decoração, maternidade e pet. Como mãe, sei como ninguém o peso da decisão de quem cuida da casa, e é esse olhar que eu levo para cada vídeo que gravo.</p>
+        <p>Trabalho de perto com cada marca desde a ideia até a entrega final, porque acredito que o melhor resultado nasce quando a gente constrói o roteiro junto.</p>
+        <ul class="promessas">
+          <li><i>01</i> Roteiro aprovado antes de gravar</li>
+          <li><i>02</i> Uma rodada de ajuste inclusa</li>
+          <li><i>03</i> Entrega em até 72 horas úteis</li>
+        </ul>
+        <p class="assinatura">Gabriela Sayuri</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. CONTEÚDOS DE DESTAQUE
+       ============================================================ -->
+  <section id="destaques" class="secao secao--off">
+    <div class="env">
+      <div class="cabecalho-secao reveal">
+        <span class="numero-secao"><i>02</i>Destaques</span>
+        <h2>Conteúdos em destaque</h2>
+        <p>Três vídeos que mostram bem o meu jeito de criar. Clique em qualquer um para assistir na íntegra.</p>
+      </div>
+      <div class="destaques-grade" id="grade-destaques"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. TRABALHOS POR NICHO
+       ============================================================ -->
+  <section id="trabalhos" class="secao">
+    <div class="env">
+      <div class="cabecalho-secao reveal">
+        <span class="numero-secao"><i>03</i>Trabalhos</span>
+        <h2>Trabalhos por nicho</h2>
+        <p>Uma amostra dos conteúdos que já produzi, organizados por área. Filtre pelo nicho que te interessa.</p>
+      </div>
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar trabalhos por nicho"></div>
+      <div class="trabalhos-grade" id="grade-trabalhos"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. COMO EU TE AJUDO
+       ============================================================ -->
+  <section id="servicos" class="secao secao--off">
+    <div class="env">
+      <div class="cabecalho-secao reveal">
+        <span class="numero-secao"><i>04</i>Serviços</span>
+        <h2>Como eu te ajudo</h2>
+        <p>Seis formas de trabalharmos juntas, do vídeo avulso ao pacote fixo mensal.</p>
+      </div>
+      <div class="servicos-grade" id="grade-servicos"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. NÚMEROS E DEPOIMENTOS
+       ============================================================ -->
+  <section id="numeros" class="secao">
+    <div class="env">
+      <div class="cabecalho-secao reveal">
+        <span class="numero-secao"><i>05</i>Números</span>
+        <h2>Números e depoimentos</h2>
+        <p>O resultado do trabalho contado em números e nas palavras de quem já foi cliente.</p>
+      </div>
+
+      <div class="metricas-grade" id="grade-metricas"></div>
+
+      <p class="subtitulo-bloco reveal">Resultados de campanha</p>
+      <div class="resultados-grade" id="grade-resultados"></div>
+
+      <p class="subtitulo-bloco reveal">O que dizem sobre mim</p>
+      <div class="depoimentos-grade" id="grade-depoimentos"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. BORA CRIAR JUNTOS
+       ============================================================ -->
+  <section id="contato" class="secao secao--off">
+    <div class="env">
+      <div class="cabecalho-secao reveal">
+        <span class="numero-secao"><i>06</i>Contato</span>
+        <h2>Bora criar juntos?</h2>
+        <p>Me conta um pouco sobre a sua marca e o que você precisa. Eu respondo rapidinho.</p>
+      </div>
+
+      <div class="contato-grade">
+        <div class="reveal">
+          <!-- Formulário sem backend: ao enviar, apenas mostra uma confirmação na tela.
+               Para receber os envios de verdade, ligue este formulário a um serviço
+               como Formspree, e-mail próprio ou outro backend de sua escolha. -->
+          <form id="formularioContato" novalidate>
+            <div class="campo">
+              <label for="campoNome">Nome</label>
+              <input type="text" id="campoNome" name="nome" required autocomplete="name">
+            </div>
+            <div class="campo">
+              <label for="campoEmail">E-mail</label>
+              <input type="email" id="campoEmail" name="email" required autocomplete="email">
+            </div>
+            <div class="campo">
+              <label for="campoMensagem">Mensagem</label>
+              <textarea id="campoMensagem" name="mensagem" required></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar mensagem</button>
+          </form>
+          <div id="formConfirmacao" role="status">
+            <h3 style="font-size:1.2rem">Mensagem enviada!</h3>
+            <p style="margin-top:10px;color:var(--tinta-suave)">Obrigada pelo contato. Eu costumo responder em até um dia útil.</p>
+          </div>
+        </div>
+
+        <div class="contato-lateral reveal">
+          <h3>Outros jeitos de falar comigo</h3>
+          <p>Atendo marcas de todo o Brasil, gravando em Florianópolis. Se preferir, me chama direto por um desses canais.</p>
+          <div class="contato-links">
+            <a href="https://wa.me/5511985736033" target="_blank" rel="noopener noreferrer">
+              <span>WhatsApp</span><span>(11) 98573-6033</span>
+            </a>
+            <a href="mailto:ugc.gabrielasayuri@gmail.com">
+              <span>E-mail</span><span>ugc.gabrielasayuri@gmail.com</span>
+            </a>
+            <a href="https://instagram.com/gabriela_sayurii" target="_blank" rel="noopener noreferrer">
+              <span>Instagram</span><span>@gabriela_sayurii</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     8. RODAPÉ
+     ============================================================ -->
+<footer>
+  <div class="env rodape-int">
+    <span class="rodape-marca">Gabriela Sayuri</span>
+    <nav class="rodape-redes" aria-label="Redes sociais">
+      <a href="https://instagram.com/gabriela_sayurii" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://wa.me/5511985736033" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="mailto:ugc.gabrielasayuri@gmail.com">E-mail</a>
+    </nav>
+    <p class="rodape-copy">© <span id="anoAtual"></span> Gabriela Sayuri. Portfólio de criadora de conteúdo UGC, Florianópolis.</p>
+  </div>
+</footer>
+
+<!-- ============================================================
+     CARD DE CAPTURA (mídia kit)
+     ============================================================ -->
+<div class="captura-fundo" id="capturaFundo">
+  <div class="captura-card" role="dialog" aria-modal="true" aria-labelledby="capturaTitulo">
+    <button class="captura-fechar" id="capturaFechar" aria-label="Fechar">✕</button>
+    <span class="captura-tag">Mídia kit</span>
+    <h3 id="capturaTitulo">Quer meu mídia kit completo?</h3>
+    <p>Deixa seu nome e e-mail que eu te envio com todos os meus números e formatos de trabalho.</p>
+    <form id="capturaForm">
+      <div class="campo">
+        <label for="capturaNome">Nome</label>
+        <input type="text" id="capturaNome" name="nome" required autocomplete="name">
+      </div>
+      <div class="campo">
+        <label for="capturaEmail">E-mail</label>
+        <input type="email" id="capturaEmail" name="email" required autocomplete="email">
+      </div>
+      <button type="submit" class="btn">Quero receber</button>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ==========================================================
+     DADOS :: edite os arrays abaixo para atualizar o site
+     ========================================================== */
+
+  // Marcas que já trabalharam com a creator (troque ou adicione novas)
+  var marcas = ["Leiturinha","Dove","Saint German","TodBaby","Decathlon","L’Oreal","Liv UP","Spoleto"];
+
+  // Conteúdos de destaque (seção 02).
+  // videoUrl já está com os links reais que você passou.
+  // A capa é o bloco .midia dentro de cada card: troque por um <img> real quando tiver a imagem
+  // (é só substituir a div.midia mantendo a classe midia midia--9-16).
+  var destaques = [
+    { titulo:"Conteúdo em destaque 01", contexto:"Troque por uma linha curta contando o contexto deste vídeo.", numero:"+1,4M", rotulo:"views no tiktok", videoUrl:"https://vt.tiktok.com/ZSqK48Acs/" },
+    { titulo:"Conteúdo em destaque 02", contexto:"Troque por uma linha curta contando o contexto deste vídeo.", numero:"+16K", rotulo:"views no tiktok", videoUrl:"https://vt.tiktok.com/ZSqK4CjCv/" },
+    { titulo:"Conteúdo em destaque 03", contexto:"Troque por uma linha curta contando o contexto deste vídeo.", numero:"+20K", rotulo:"views no reels", videoUrl:"https://www.instagram.com/reel/DSueAVDAJLz/?stkn=eGR2MGI5NnRtb3Jl" }
+  ];
+
+  // Trabalhos por nicho (seção 03). nicho é usado no filtro.
+  var trabalhos = [
+    { titulo:"Trabalho 01", nicho:"Beleza" },
+    { titulo:"Trabalho 02", nicho:"Beleza" },
+    { titulo:"Trabalho 03", nicho:"Moda" },
+    { titulo:"Trabalho 04", nicho:"Moda" },
+    { titulo:"Trabalho 05", nicho:"Comida" },
+    { titulo:"Trabalho 06", nicho:"Comida" },
+    { titulo:"Trabalho 07", nicho:"Casa e Decoração" },
+    { titulo:"Trabalho 08", nicho:"Casa e Decoração" },
+    { titulo:"Trabalho 09", nicho:"Maternidade" },
+    { titulo:"Trabalho 10", nicho:"Maternidade" },
+    { titulo:"Trabalho 11", nicho:"Pet" },
+    { titulo:"Trabalho 12", nicho:"Pet" }
+  ];
+
+  // Serviços (seção 04)
+  var servicos = [
+    { numero:"01", titulo:"Vídeo UGC", desc:"Vídeo vertical autêntico, roteirizado e gravado sob medida para a sua campanha." },
+    { numero:"02", titulo:"Corte para anúncio", desc:"Edição otimizada para rodar como anúncio pago em Meta Ads ou TikTok Ads." },
+    { numero:"03", titulo:"Fotos do produto", desc:"Ensaio fotográfico simples e claro, pronto para loja virtual e redes sociais." },
+    { numero:"04", titulo:"Unboxing", desc:"Vídeo de abertura de caixa com reação real, ótimo para gerar desejo pelo produto." },
+    { numero:"05", titulo:"Publicação no meu perfil", desc:"O conteúdo é publicado no meu Instagram, alcançando a minha própria audiência." },
+    { numero:"06", titulo:"Pacote mensal", desc:"Produção recorrente de conteúdo, com entregas combinadas todo mês." }
+  ];
+
+  // Métricas com contador animado (seção 05). Troque "alvo" pelos números reais.
+  var metricas = [
+    { alvo:0, sufixo:"+", rotulo:"Vídeos entregues" },
+    { alvo:100, sufixo:"+", rotulo:"Marcas atendidas" },
+    { alvo:2, sufixo:"M+", rotulo:"Views somadas" },
+    { alvo:0, sufixo:"%", rotulo:"Entregas no prazo" }
+  ];
+
+  // Resultados de campanha (seção 05)
+  var resultados = [
+    { marca:"Dove", objetivo:"Apresentar o produto no dia a dia real", texto:"Vídeo UGC usado como conteúdo orgânico e como criativo de anúncio." },
+    { marca:"TodBaby", objetivo:"Aproximar a marca do público de mães", texto:"Conteúdo de maternidade com uso real do produto na rotina com o bebê." },
+    { marca:"Decathlon", objetivo:"Gerar prova social para o lançamento", texto:"Vídeo publicado no perfil da creator e reaproveitado pela marca nos stories." }
+  ];
+
+  // Depoimentos (seção 05)
+  var depoimentos = [
+    { texto:"A Gabriela entregou exatamente o que a gente precisava, dentro do prazo combinado e com muita atenção ao roteiro.", nome:"Cliente 01", empresa:"Empresa 01" },
+    { texto:"O processo foi tranquilo do início ao fim. A comunicação clara fez toda a diferença no resultado final.", nome:"Cliente 02", empresa:"Empresa 02" },
+    { texto:"O conteúdo pareceu muito natural, longe da cara de anúncio. Foi exatamente o que buscávamos.", nome:"Cliente 03", empresa:"Empresa 03" },
+    { texto:"Recomendo o trabalho dela para qualquer marca que queira um conteúdo autêntico e bem cuidado.", nome:"Cliente 04", empresa:"Empresa 04" }
+  ];
+
+  var prefereReduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ==========================================================
+     RENDERIZAÇÃO
+     ========================================================== */
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html !== undefined) e.innerHTML = html;
+    return e;
+  }
+
+  // faixa de marcas (duplicada para dar loop contínuo)
+  (function montarMarcas(){
+    var trilho = document.getElementById("trilhoMarcas");
+    var lista = marcas.concat(marcas);
+    lista.forEach(function(nome){
+      var item = el("span", "marcas-item", nome);
+      trilho.appendChild(item);
+    });
+  })();
+
+  // destaques
+  (function montarDestaques(){
+    var grade = document.getElementById("grade-destaques");
+    destaques.forEach(function(d){
+      var card = el("a", "destaque-card reveal");
+      card.href = d.videoUrl;
+      card.target = "_blank";
+      card.rel = "noopener noreferrer";
+      card.setAttribute("aria-label", "Assistir ao vídeo: " + d.titulo);
+      card.innerHTML =
+        '<div class="midia midia--9-16" role="img" aria-label="Capa vertical do vídeo ' + d.titulo + '">' +
+          '<span class="midia__legenda">Capa vertical, formato 9:16</span>' +
+          '<span class="play-botao" aria-hidden="true"></span>' +
+        '</div>' +
+        '<div class="destaque-corpo">' +
+          '<span class="destaque-numero">' + d.numero + '</span>' +
+          '<span class="destaque-rotulo">' + d.rotulo + '</span>' +
+          '<h3 class="destaque-titulo">' + d.titulo + '</h3>' +
+          '<p class="destaque-contexto">' + d.contexto + '</p>' +
+        '</div>';
+      grade.appendChild(card);
+    });
+  })();
+
+  // trabalhos + filtros
+  (function montarTrabalhos(){
+    var grade = document.getElementById("grade-trabalhos");
+    var filtrosEl = document.getElementById("filtros");
+    var nichos = ["Todos"];
+    trabalhos.forEach(function(t){
+      if (nichos.indexOf(t.nicho) === -1) nichos.push(t.nicho);
+    });
+
+    nichos.forEach(function(nicho, i){
+      var btn = el("button", "filtro-btn", nicho);
+      btn.type = "button";
+      btn.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+      btn.addEventListener("click", function(){
+        Array.prototype.forEach.call(filtrosEl.querySelectorAll(".filtro-btn"), function(b){
+          b.setAttribute("aria-pressed", "false");
+        });
+        btn.setAttribute("aria-pressed", "true");
+        Array.prototype.forEach.call(grade.querySelectorAll(".trabalho-card"), function(card){
+          var mostra = nicho === "Todos" || card.getAttribute("data-nicho") === nicho;
+          card.classList.toggle("escondido", !mostra);
+        });
+      });
+      filtrosEl.appendChild(btn);
+    });
+
+    trabalhos.forEach(function(t){
+      var card = el("div", "trabalho-card reveal");
+      card.setAttribute("data-nicho", t.nicho);
+      card.innerHTML =
+        '<div class="midia midia--4-5" role="img" aria-label="Imagem do trabalho ' + t.titulo + ', nicho ' + t.nicho + '">' +
+          '<span class="midia__legenda">Foto do trabalho, formato 4:5</span>' +
+        '</div>' +
+        '<div class="trabalho-corpo">' +
+          '<span class="trabalho-nicho">' + t.nicho + '</span>' +
+          '<h3 class="trabalho-titulo">' + t.titulo + '</h3>' +
+        '</div>';
+      grade.appendChild(card);
+    });
+  })();
+
+  // serviços
+  (function montarServicos(){
+    var grade = document.getElementById("grade-servicos");
+    servicos.forEach(function(s){
+      var card = el("div", "servico-card reveal");
+      card.innerHTML =
+        '<span class="servico-numero">' + s.numero + '</span>' +
+        '<h3 class="servico-titulo">' + s.titulo + '</h3>' +
+        '<p class="servico-desc">' + s.desc + '</p>';
+      grade.appendChild(card);
+    });
+  })();
+
+  // métricas (contador)
+  (function montarMetricas(){
+    var grade = document.getElementById("grade-metricas");
+    metricas.forEach(function(m){
+      var item = el("div", "metrica reveal");
+      item.innerHTML =
+        '<b data-contador data-alvo="' + m.alvo + '" data-sufixo="' + m.sufixo + '">0' + m.sufixo + '</b>' +
+        '<span>' + m.rotulo + '</span>';
+      grade.appendChild(item);
+    });
+  })();
+
+  // resultados de campanha
+  (function montarResultados(){
+    var grade = document.getElementById("grade-resultados");
+    resultados.forEach(function(r){
+      var card = el("div", "resultado-card reveal");
+      card.innerHTML =
+        '<span class="resultado-marca">' + r.marca + '</span>' +
+        '<p class="resultado-objetivo">' + r.objetivo + '</p>' +
+        '<p class="resultado-texto">' + r.texto + '</p>';
+      grade.appendChild(card);
+    });
+  })();
+
+  // depoimentos
+  (function montarDepoimentos(){
+    var grade = document.getElementById("grade-depoimentos");
+    depoimentos.forEach(function(d){
+      var card = el("div", "depoimento-card reveal");
+      card.innerHTML =
+        '<p class="depoimento-texto">' + d.texto + '</p>' +
+        '<p class="depoimento-autor"><b>' + d.nome + '</b> · ' + d.empresa + '</p>';
+      grade.appendChild(card);
+    });
+  })();
+
+  /* ==========================================================
+     MENU MOBILE
+     ========================================================== */
+  (function menuMobile(){
+    var btn = document.getElementById("menuBtn");
+    var painel = document.getElementById("navMobile");
+
+    function fechar(){
+      painel.classList.remove("ativo");
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Abrir menu");
+    }
+    function abrir(){
+      painel.classList.add("ativo");
+      btn.setAttribute("aria-expanded", "true");
+      btn.setAttribute("aria-label", "Fechar menu");
+    }
+
+    btn.addEventListener("click", function(){
+      if (painel.classList.contains("ativo")) fechar(); else abrir();
+    });
+    Array.prototype.forEach.call(painel.querySelectorAll("a"), function(a){
+      a.addEventListener("click", fechar);
+    });
+  })();
+
+  /* ==========================================================
+     ANIMAÇÃO DE ENTRADA (IntersectionObserver)
+     ========================================================== */
+  (function animarEntrada(){
+    var itens = document.querySelectorAll(".reveal");
+    if (prefereReduzirMovimento || !("IntersectionObserver" in window)){
+      itens.forEach(function(item){ item.classList.add("em-vista"); });
+      return;
+    }
+    var observador = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(entrada){
+        if (entrada.isIntersecting){
+          entrada.target.classList.add("em-vista");
+          observador.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
+    itens.forEach(function(item){ observador.observe(item); });
+  })();
+
+  /* ==========================================================
+     CONTADOR ANIMADO
+     ========================================================== */
+  (function contadores(){
+    var numeros = document.querySelectorAll("[data-contador]");
+
+    function animar(elemento){
+      var alvo = parseFloat(elemento.getAttribute("data-alvo")) || 0;
+      var sufixo = elemento.getAttribute("data-sufixo") || "";
+
+      if (prefereReduzirMovimento){
+        elemento.textContent = alvo + sufixo;
+        return;
+      }
+
+      var duracao = 1400;
+      var inicio = null;
+
+      function passo(timestamp){
+        if (inicio === null) inicio = timestamp;
+        var progresso = Math.min((timestamp - inicio) / duracao, 1);
+        var facilitado = 1 - Math.pow(1 - progresso, 3);
+        var valorAtual = Math.round(alvo * facilitado);
+        elemento.textContent = valorAtual + sufixo;
+        if (progresso < 1) requestAnimationFrame(passo);
+      }
+      requestAnimationFrame(passo);
+    }
+
+    if (!("IntersectionObserver" in window)){
+      numeros.forEach(animar);
+      return;
+    }
+    var observador = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(entrada){
+        if (entrada.isIntersecting){
+          animar(entrada.target);
+          observador.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    numeros.forEach(function(n){ observador.observe(n); });
+  })();
+
+  /* ==========================================================
+     FORMULÁRIO DE CONTATO
+     ========================================================== */
+  (function formularioContato(){
+    var form = document.getElementById("formularioContato");
+    var confirmacao = document.getElementById("formConfirmacao");
+    form.addEventListener("submit", function(evento){
+      evento.preventDefault();
+      form.classList.add("escondido");
+      confirmacao.classList.add("ativo");
+      form.reset();
+    });
+  })();
+
+  /* ==========================================================
+     CARD DE CAPTURA (mídia kit)
+     ========================================================== */
+  (function cardCaptura(){
+    var CHAVE = "midiaKitExibido";
+    var fundo = document.getElementById("capturaFundo");
+    var fechar = document.getElementById("capturaFechar");
+    var form = document.getElementById("capturaForm");
+    var focoAnterior = null;
+
+    function abrirModal(){
+      focoAnterior = document.activeElement;
+      fundo.classList.add("ativo");
+      var primeiroInput = document.getElementById("capturaNome");
+      if (primeiroInput) primeiroInput.focus();
+      document.addEventListener("keydown", aoTeclar);
+    }
+
+    function fecharModal(){
+      fundo.classList.remove("ativo");
+      document.removeEventListener("keydown", aoTeclar);
+      if (focoAnterior) focoAnterior.focus();
+    }
+
+    function aoTeclar(evento){
+      if (evento.key === "Escape") fecharModal();
+    }
+
+    fechar.addEventListener("click", fecharModal);
+    fundo.addEventListener("click", function(evento){
+      if (evento.target === fundo) fecharModal();
+    });
+    form.addEventListener("submit", function(evento){
+      evento.preventDefault();
+      fundo.querySelector(".captura-card").innerHTML =
+        '<button class="captura-fechar" id="capturaFecharFinal" aria-label="Fechar">✕</button>' +
+        '<span class="captura-tag">Mídia kit</span>' +
+        '<h3>Obrigada!</h3>' +
+        '<p>Recebi seus dados e já vou te enviar o mídia kit completo por e-mail.</p>';
+      document.getElementById("capturaFecharFinal").addEventListener("click", fecharModal);
+    });
+
+    try {
+      if (!sessionStorage.getItem(CHAVE)){
+        window.setTimeout(function(){
+          sessionStorage.setItem(CHAVE, "1");
+          abrirModal();
+        }, 7000);
+      }
+    } catch (erro) {
+      // sessionStorage indisponível (ex.: navegação privada restrita): não exibe o card.
+    }
+  })();
+
+  /* ==========================================================
+     ANO AUTOMÁTICO NO RODAPÉ
+     ========================================================== */
+  document.getElementById("anoAtual").textContent = new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>
