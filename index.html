@@ -334,10 +334,8 @@ section[id]{scroll-margin-top:110px}
 .resultado-texto{margin-top:12px;font-size:.92rem;color:var(--tinta-suave)}
 
 .depoimentos-grade{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-.depoimento-card{border:1px solid var(--tinta);padding:34px;background:var(--off-white)}
-.depoimento-texto{font-size:1.02rem;font-style:italic;font-family:"Tenor Sans",serif;line-height:1.55}
-.depoimento-autor{margin-top:20px;font-size:.8rem;letter-spacing:.06em;color:var(--tinta-suave)}
-.depoimento-autor b{color:var(--tinta);font-weight:500}
+.depoimento-card{border:1px solid var(--tinta);background:var(--off-white);display:flex;align-items:center;overflow:hidden}
+.depoimento-card img{width:100%;height:auto;display:block}
 
 @media (max-width:880px){
   .metricas-grade{grid-template-columns:repeat(2,1fr);row-gap:44px}
@@ -742,12 +740,13 @@ footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
     { marca:"Decathlon", objetivo:"Gerar prova social para o lançamento", texto:"Vídeo publicado no perfil da creator e reaproveitado pela marca nos stories." }
   ];
 
-  // Depoimentos (seção 05)
+  // Depoimentos (seção 05). Prints reais de avaliação: troque "imagem" pelo
+  // arquivo em assets/depoimentos e "alt" por uma descrição do conteúdo do print.
   var depoimentos = [
-    { texto:"A Gabriela entregou exatamente o que a gente precisava, dentro do prazo combinado e com muita atenção ao roteiro.", nome:"Cliente 01", empresa:"Empresa 01" },
-    { texto:"O processo foi tranquilo do início ao fim. A comunicação clara fez toda a diferença no resultado final.", nome:"Cliente 02", empresa:"Empresa 02" },
-    { texto:"O conteúdo pareceu muito natural, longe da cara de anúncio. Foi exatamente o que buscávamos.", nome:"Cliente 03", empresa:"Empresa 03" },
-    { texto:"Recomendo o trabalho dela para qualquer marca que queira um conteúdo autêntico e bem cuidado.", nome:"Cliente 04", empresa:"Empresa 04" }
+    { imagem:"assets/depoimentos/hev-negocios-digitais.jpg", alt:"Avaliação de 5 estrelas da HEV Negócios Digitais: Excelente, recomendo! Entregou exatamente o que precisávamos." },
+    { imagem:"assets/depoimentos/cygnuss-lingerie.jpg", alt:"Avaliação de 5 estrelas da Cygnuss Lingerie: Foi uma ótima experiência trabalhar com a Gabriela! Entrega conteúdo criativo e com muita qualidade, com certeza faremos mais parcerias futuramente." },
+    { imagem:"assets/depoimentos/grupo-lima-e-pergher.jpg", alt:"Avaliação de 5 estrelas do Grupo Lima e Pergher: Adoramos trabalhar com a Gabi." },
+    { imagem:"assets/depoimentos/cna-sa.jpg", alt:"Avaliação de 5 estrelas da CNA S.A.: Os conteúdos entregues atenderam a expectativa da equipe, ótimo trabalho!" }
   ];
 
   var prefereReduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -876,14 +875,12 @@ footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
     });
   })();
 
-  // depoimentos
+  // depoimentos (prints reais de avaliação)
   (function montarDepoimentos(){
     var grade = document.getElementById("grade-depoimentos");
     depoimentos.forEach(function(d){
       var card = el("div", "depoimento-card reveal");
-      card.innerHTML =
-        '<p class="depoimento-texto">' + d.texto + '</p>' +
-        '<p class="depoimento-autor"><b>' + d.nome + '</b> · ' + d.empresa + '</p>';
+      card.innerHTML = '<img src="' + d.imagem + '" alt="' + d.alt + '" loading="lazy">';
       grade.appendChild(card);
     });
   })();
